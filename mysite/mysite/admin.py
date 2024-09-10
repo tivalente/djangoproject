@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from .models import MyModel
+# from .models import MyModel
 
 
-class MyAdminSite(admin.AdminSite):
-    site_header = "Monty Python administration"
+class CustomAdminSite(admin.AdminSite):
+    site_header = "Menu de Administração"
 
 
-admin_site = MyAdminSite(name="myadmin")
-admin_site.register(MyModel)
+admin_site = CustomAdminSite()
+# admin_site.register(MyModel)
