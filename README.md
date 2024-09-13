@@ -19,3 +19,8 @@ git push -u origin master
 
 #consulta banco de dados
 python .\manage.py shell -i ipyton
+
+#criando estrutura dos contatos
+poetry run .\manage.py startapp contacts
+ou
+python .\manage.py startapp contact
