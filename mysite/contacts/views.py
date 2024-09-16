@@ -2,8 +2,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from .forms import ContactForm, NameForm
+from django.conf import settings
+from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required, permission_required
 
 
+@permission_required("contacts.add_contact")
+# @login_required
 def create(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
